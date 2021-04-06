@@ -1,0 +1,19 @@
+{
+  "name": "dbmsproject",
+  "version": "1.0.0",
+  "description": "DBMS Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pekka-dev/blood-bank-manager.git"
+  },
+  "author": "pekka-dev,yash,yavisth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pekka-dev/blood-bank-manager/issues"
+  },
+  "homepage": "https://github.com/pekka-dev/blood-bank-manager#readme"
+}
