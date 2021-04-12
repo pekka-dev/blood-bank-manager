@@ -52,7 +52,7 @@ export default function Home() {
                     <Typography variant="h6" className={classes.title}>
                         News
                     </Typography>
-                    <Button color="secondary" variant="contained" component={Link} to="/login">
+                    <Button color="inherit" component={Link} to="/login">
                         Login
                     </Button>
                 </Toolbar>

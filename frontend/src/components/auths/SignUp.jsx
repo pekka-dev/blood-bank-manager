@@ -13,10 +13,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import Container from '@material-ui/core/Container';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { SignUpError } from '../models';
-import ErrorTextField from './ErrorTextField';
-import LoadingButton from './LoadingButton';
+import { useAuth } from '../../contexts/AuthContext';
+import { SignUpError } from '../../models';
+import ErrorTextField from '../ErrorTextField';
+import LoadingButton from '../LoadingButton';
+import Copyright from '../Copyright';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -45,19 +46,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
     },
 }));
-
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="/">
-                Red bank
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
 
 export default function SignUp() {
     const classes = useStyles();
@@ -95,6 +83,7 @@ export default function SignUp() {
         if (isError) {
             setError(tempError);
             for (const errorKey in tempError) {
+                // eslint-disable-next-line no-prototype-builtins
                 if (tempError.hasOwnProperty(errorKey))
                     if (tempError[errorKey]) {
                         const id = errorKey.replace('Error', '');
