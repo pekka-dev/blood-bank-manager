@@ -5,7 +5,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -14,8 +13,8 @@ import { useAuth } from '../../contexts/AuthContext';
 import { LogInError } from '../../models';
 import ErrorTextField from '../ErrorTextField';
 import LoadingButton from '../LoadingButton';
-import Copyright from '../Copyright';
 import Logo from '../../logo';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -148,10 +147,14 @@ export default function LogIn() {
                         </Grid>
                     </Grid>
                 </form>
+                <Grid container justify="flex-start">
+                    <Grid item>
+                        <Button component={RouterLink} to="/">
+                            Cancel
+                        </Button>
+                    </Grid>
+                </Grid>
             </div>
-            <Box mt={8}>
-                <Copyright />
-            </Box>
         </Container>
     );
 }
