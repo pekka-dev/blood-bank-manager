@@ -14,7 +14,7 @@ export default function ErrorTextField({ description }) {
     const classes = useStyles();
 
     return (
-        <Grid className={classes.error} item xs={12} container spacing={1} alignItems="center">
+        <Grid container className={classes.error} item spacing={1} alignItems="center">
             <Grid item xs="auto">
                 <ErrorIcon style={{ fontSize: 15 }} color="error" />
             </Grid>

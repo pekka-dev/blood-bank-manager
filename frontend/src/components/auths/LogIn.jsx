@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import React, { useRef, useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -13,8 +10,11 @@ import { useAuth } from '../../contexts/AuthContext';
 import { LogInError } from '../../models';
 import ErrorTextField from '../ErrorTextField';
 import LoadingButton from '../LoadingButton';
-import Logo from '../../logo';
+import GoogleIcon from '../../icons/GoogleIcon';
+import LinkButton from '../LinkButton';
 import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -36,22 +36,23 @@ const useStyles = makeStyles((theme) => ({
 export default function LogIn() {
     const classes = useStyles();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const emailRef = useRef();
+    const passwordRef = useRef();
     const [error, setError] = useState(new LogInError());
     const [loadingLogIn, setLoadingLogIn] = useState(false);
-    const { logIn } = useAuth();
+    const { logIn, signInWithGoogle } = useAuth();
     const history = useHistory();
 
     async function handleLogin(e) {
         e.preventDefault();
+
         const tempError = new LogInError();
         let isError = false;
-        if (!email) {
+        if (!emailRef.current.value) {
             tempError.emailError = true;
             isError = true;
         }
-        if (!password) {
+        if (!passwordRef.current.value) {
             tempError.passwordError = true;
             isError = true;
         }
@@ -71,7 +72,7 @@ export default function LogIn() {
         setLoadingLogIn(true);
         try {
             setError(new LogInError());
-            await logIn(email, password);
+            await logIn(emailRef.current.value, passwordRef.current.value);
             history.push('/');
         } catch (e) {
             setError(tempError);
@@ -79,11 +80,17 @@ export default function LogIn() {
         setLoadingLogIn(false);
     }
 
+    async function handleGoogleSign() {
+        await signInWithGoogle();
+        history.push('/');
+    }
+
     return (
         <Container component="main" maxWidth="xs">
-            <CssBaseline />
             <div className={classes.paper}>
-                <Logo />
+                <Avatar className={classes.avatar}>
+                    <LockOutlinedIcon />
+                </Avatar>
                 <Typography component="h1" variant="h5">
                     Log in
                 </Typography>
@@ -94,8 +101,7 @@ export default function LogIn() {
                                 error={error.emailError}
                                 variant="outlined"
                                 fullWidth
-                                value={email}
-                                onChange={({ target: { value } }) => setEmail(value)}
+                                inputRef={emailRef}
                                 id="email"
                                 label="Email Address"
                                 name="email"
@@ -112,8 +118,7 @@ export default function LogIn() {
                                 error={error.passwordError}
                                 variant="outlined"
                                 fullWidth
-                                value={password}
-                                onChange={({ target: { value } }) => setPassword(value)}
+                                inputRef={passwordRef}
                                 name="password"
                                 label="Password"
                                 type="password"
@@ -125,35 +130,54 @@ export default function LogIn() {
                         {error.passwordError && (
                             <ErrorTextField description="Enter your password" />
                         )}
-                        <Grid item xs={12}>
-                            <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" />}
-                                label="Remember me"
-                            />
-                        </Grid>
-                    </Grid>
-
-                    <LoadingButton title="Log In" loading={loadingLogIn} />
-                    <Grid container>
-                        <Grid item xs>
-                            <Link variant="body2" component={RouterLink} to="/forgot-password">
+                        <Grid container item xs={12} alignItems="center">
+                            <Link
+                                variant="body2"
+                                underline="none"
+                                component={RouterLink}
+                                to="/forgot-password"
+                            >
                                 Forgot password?
                             </Link>
                         </Grid>
+                    </Grid>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6}>
+                            <LoadingButton title="Log In" loading={loadingLogIn} />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <LoadingButton title="Log In as Org" loading={loadingLogIn} />
+                        </Grid>
+                    </Grid>
+                    <Grid container justify="flex-start" direction="column" spacing={2}>
                         <Grid item>
-                            <Link variant="body2" component={RouterLink} to="/signup">
+                            <Button
+                                fullWidth
+                                color="primary"
+                                variant="contained"
+                                onClick={handleGoogleSign}
+                                startIcon={<GoogleIcon />}
+                            >
+                                Sign In with Google
+                            </Button>
+                        </Grid>
+                        <Grid container justify="flex-end" item>
+                            <Link
+                                variant="body2"
+                                underline="none"
+                                component={RouterLink}
+                                to="/signup"
+                            >
                                 {"Don't have an account? Sign Up"}
                             </Link>
                         </Grid>
+                        <Grid item>
+                            <LinkButton component={RouterLink} to="/">
+                                Cancel
+                            </LinkButton>
+                        </Grid>
                     </Grid>
                 </form>
-                <Grid container justify="flex-start">
-                    <Grid item>
-                        <Button component={RouterLink} to="/">
-                            Cancel
-                        </Button>
-                    </Grid>
-                </Grid>
             </div>
         </Container>
     );

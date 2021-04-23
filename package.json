@@ -4,7 +4,9 @@
   "description": "DBMS Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-local": "node -r dotenv/config index.js dotenv_config_path=.env.local",
+    "start-local-nodemon": "nodemon -r dotenv/config index.js dotenv_config_path=.env.local"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/pekka-dev/blood-bank-manager#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.5"
   }
 }

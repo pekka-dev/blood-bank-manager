@@ -2,7 +2,6 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     wrapper: {
@@ -13,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
     },
     buttonProgress: {
-        color: green[500],
         position: 'absolute',
     },
 }));

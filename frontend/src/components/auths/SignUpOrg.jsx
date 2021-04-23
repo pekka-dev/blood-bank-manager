@@ -1,11 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import Container from '@material-ui/core/Container';
@@ -15,7 +14,6 @@ import { SignUpError } from '../../models';
 import ErrorTextField from '../ErrorTextField';
 import LoadingButton from '../LoadingButton';
 import LinkButton from '../LinkButton';
-import GoogleIcon from '../../icons/GoogleIcon';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -48,13 +46,11 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
     const classes = useStyles();
 
-    const fNameRef = useRef();
-    const lNameRef = useRef();
-    const emailRef = useRef();
-    const passwordRef = useRef();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [error, setError] = useState(new SignUpError());
     const [loadingSignUp, setLoadingSingUp] = useState(false);
-    const { signUp, signInWithGoogle } = useAuth();
+    const { signUp } = useAuth();
     const history = useHistory();
 
     async function handleSignUp(e) {
@@ -62,19 +58,12 @@ export default function SignUp() {
 
         const tempError = new SignUpError();
         let isError = false;
-        if (!fNameRef.current.value) {
-            tempError.fNameError = true;
-            isError = true;
-        }
-        if (!lNameRef.current.value) {
-            tempError.lNameError = true;
-            isError = true;
-        }
-        if (!emailRef.current.value) {
+
+        if (!email) {
             tempError.emailError = true;
             isError = true;
         }
-        if (!passwordRef.current.value) {
+        if (!password) {
             tempError.passwordError = true;
             isError = true;
         }
@@ -94,17 +83,12 @@ export default function SignUp() {
         setLoadingSingUp(true);
         try {
             setError(new SignUpError());
-            await signUp(emailRef.current.value, passwordRef.current.value);
+            await signUp(email, password);
             history.push('/');
         } catch (e) {
             tempError.signUPError = true;
         }
         setLoadingSingUp(false);
-    }
-
-    async function handleGoogleSign(e) {
-        await signInWithGoogle();
-        history.push('/');
     }
 
     return (
@@ -114,47 +98,18 @@ export default function SignUp() {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign up
+                    Sign up as Org
                 </Typography>
                 <form className={classes.form} noValidate onSubmit={handleSignUp}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                error={error.fNameError}
-                                autoComplete="fname"
-                                name="firstName"
-                                variant="outlined"
-                                inputRef={fNameRef}
-                                fullWidth
-                                id="fName"
-                                label="First Name"
-                                autoFocus
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                error={error.lNameError}
-                                variant="outlined"
-                                inputRef={lNameRef}
-                                fullWidth
-                                id="lName"
-                                label="Last Name"
-                                name="lastName"
-                                autoComplete="lname"
-                            />
-                        </Grid>
-                        {error.fNameError && error.lNameError ? (
-                            <ErrorTextField description="Enter first name and surname" />
-                        ) : error.fNameError ? (
-                            <ErrorTextField description="Enter first name" />
-                        ) : error.lNameError ? (
-                            <ErrorTextField description="Enter last name" />
-                        ) : null}
                         <Grid item xs={12}>
                             <TextField
                                 error={error.emailError}
                                 variant="outlined"
-                                inputRef={emailRef}
+                                value={email}
+                                onChange={(value) => {
+                                    setEmail(value.target.value);
+                                }}
                                 fullWidth
                                 id="email"
                                 label="Email Address"
@@ -169,7 +124,10 @@ export default function SignUp() {
                             <TextField
                                 error={error.passwordError}
                                 variant="outlined"
-                                inputRef={passwordRef}
+                                value={password}
+                                onChange={(value) => {
+                                    setPassword(value.target.value);
+                                }}
                                 fullWidth
                                 name="password"
                                 label="Password"
@@ -179,30 +137,9 @@ export default function SignUp() {
                             />
                         </Grid>
                         {error.emailError && <ErrorTextField description="Enter a password" />}
-                        <Grid item xs={12}>
-                            <Link
-                                variant="body2"
-                                underline="none"
-                                component={RouterLink}
-                                to="signup-org"
-                            >
-                                Create an account as Org
-                            </Link>
-                        </Grid>
                     </Grid>
-                    <LoadingButton title="Sign Up" loading={loadingSignUp} />
+                    <LoadingButton title="Sign Up as Org" loading={loadingSignUp} />
                     <Grid container justify="flex-start" direction="column" spacing={2}>
-                        <Grid item>
-                            <Button
-                                fullWidth
-                                color="primary"
-                                variant="contained"
-                                onClick={handleGoogleSign}
-                                startIcon={<GoogleIcon />}
-                            >
-                                Sign In with Google
-                            </Button>
-                        </Grid>
                         <Grid container item justify="flex-end">
                             <Link
                                 variant="body2"

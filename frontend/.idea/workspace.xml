@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6bbac16-169e-4c7e-a1d7-a9fbc2fdeef5" name="Default Changelist" comment="Add loading state in AuthContext.js&#10; - Which avoid startup &quot;currentUser is null&quot; error">
-      <change afterPath="$PROJECT_DIR$/public/logo256.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Copyright.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auths/ForgotPassword.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logo/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logo/logo.svg" afterDir="false" />
+    <list default="true" id="b6bbac16-169e-4c7e-a1d7-a9fbc2fdeef5" name="Default Changelist" comment="Remove Copyright.jsx footer from SignUp.jsx and LogIn.jsx and Add a Cancel Button.">
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LinkButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auths/SignUpOrg.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/custom-routes/NavRoute.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navigations/Navigation.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/GoogleIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/SyringeIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/google-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../routes/root.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ErrorTextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorTextField.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/LogIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogInForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogInForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoadingButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadingButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PrivateRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-routes/PrivateRoute.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auths/LogIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/LogIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auths/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/AuthContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/LogoIcon.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +54,14 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/components/auths/LogIn.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/LinkButton.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/Home.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/App.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/auths/ForgotPassword.jsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/auths/SignUp.jsx" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1qvT0TgAAFyNAlmwCIYublIPCMW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -55,24 +75,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env.local" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSPX" />
     <property name="eslint.code.style.apply.dismiss" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\pgarg\Desktop\DBMSProject\frontend\node_modules\prettier" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src\icons" />
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src" />
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src\components\custom-routes" />
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src\components\auths" />
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src\logo" />
     </key>
@@ -134,7 +158,19 @@
       <workItem from="1617958843227" duration="764000" />
       <workItem from="1617959644194" duration="7069000" />
       <workItem from="1618013376873" duration="1422000" />
-      <workItem from="1618024808604" duration="41260000" />
+      <workItem from="1618024808604" duration="50252000" />
+      <workItem from="1618309115390" duration="12039000" />
+      <workItem from="1618399196944" duration="8000" />
+      <workItem from="1618401072998" duration="1659000" />
+      <workItem from="1618469533857" duration="1751000" />
+      <workItem from="1618514152327" duration="7000" />
+      <workItem from="1618761885810" duration="182000" />
+      <workItem from="1618763192268" duration="29000" />
+      <workItem from="1618844225246" duration="607000" />
+      <workItem from="1618900779774" duration="708000" />
+      <workItem from="1618985038776" duration="17071000" />
+      <workItem from="1619103511868" duration="13520000" />
+      <workItem from="1619174690050" duration="60000" />
     </task>
     <task id="LOCAL-00001" summary="Add loading state in AuthContext.js&#10; - Which avoid startup &quot;currentUser is null&quot; error">
       <created>1618250072830</created>
@@ -143,7 +179,28 @@
       <option name="project" value="LOCAL" />
       <updated>1618250072830</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Change theme&#10; - Primary color =&gt; grey&#10; - Secondary color =&gt; white">
+      <created>1618250696305</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618250696305</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add Logo and Break components&#10; - Copyright.jsx component&#10; - Delete LogInForm.jsx&#10; - Add Appbar in Home.jsx page&#10; - Add logo/index.jsx as Logo">
+      <created>1618250953647</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618250953647</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove Copyright.jsx footer from SignUp.jsx and LogIn.jsx and Add a Cancel Button.">
+      <created>1618295514137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618295514137</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +220,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add loading state in AuthContext.js&#10; - Which avoid startup &quot;currentUser is null&quot; error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add loading state in AuthContext.js&#10; - Which avoid startup &quot;currentUser is null&quot; error" />
+    <MESSAGE value="Change theme&#10; - Primary color =&gt; grey&#10; - Secondary color =&gt; white" />
+    <MESSAGE value="Add Logo and Break components&#10; - Copyright.jsx component&#10; - Delete LogInForm.jsx&#10; - Add Appbar in Home.jsx page&#10; - Add logo/index.jsx as Logo" />
+    <MESSAGE value="Remove Copyright.jsx footer from SignUp.jsx and LogIn.jsx and Add a Cancel Button." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove Copyright.jsx footer from SignUp.jsx and LogIn.jsx and Add a Cancel Button." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
