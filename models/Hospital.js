@@ -19,6 +19,8 @@ const HospitalSchema = new Schema({
     }, dateOfEntry: {
         type: Date, default: Date.now
     }, availableServices: [{
+        type: String, enum: ['emergency', 'blood-bank', 'others']
+    }], bloodBank: [{
         type: String
     }]
 });
