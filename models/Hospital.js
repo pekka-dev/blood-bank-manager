@@ -18,7 +18,9 @@ const HospitalSchema = new Schema({
         type: String
     }, dateOfEntry: {
         type: Date, default: Date.now
-    }
+    }, availableServices: [{
+        type: String
+    }]
 });
 
 module.exports = mongoose.model('Hospital', HospitalSchema);
