@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
         color: green[500],
         position: 'absolute',
     },
+    signUpAsOrgButtonContainer: {
+        padding: theme.spacing(3, 0, 2),
+    },
 }));
 
 export default function SignUp() {
@@ -138,7 +141,11 @@ export default function SignUp() {
                         </Grid>
                         {error.emailError && <ErrorTextField description="Enter a password" />}
                     </Grid>
-                    <LoadingButton title="Sign Up as Org" loading={loadingSignUp} />
+                    <Grid container className={classes.signUpAsOrgButtonContainer}>
+                        <Grid item xs={12}>
+                            <LoadingButton title="Sign Up as Org" loading={loadingSignUp} />
+                        </Grid>
+                    </Grid>
                     <Grid container justify="flex-start" direction="column" spacing={2}>
                         <Grid container item justify="flex-end">
                             <Link

@@ -26,6 +26,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Container from '@material-ui/core/Container';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const drawerWidth = 240;
 
@@ -120,11 +121,12 @@ export default function Navigation(props) {
                         </Typography>
                         {currentUser ? (
                             <>
-                                <Avatar
-                                    alt="Test"
-                                    onClick={handleProfileClick}
-                                    src={currentUser.photoURL}
-                                />
+                                <Tooltip title="Profile" aria-label="profile">
+                                    <Avatar
+                                        onClick={handleProfileClick}
+                                        src={currentUser.photoURL}
+                                    />
+                                </Tooltip>
                                 <Menu
                                     open={Boolean(anchor)}
                                     anchorEl={anchor}
@@ -195,7 +197,7 @@ export default function Navigation(props) {
                     </ListItem>
                 </List>
             </Drawer>
-            <Container>{props.children}</Container>
+            <Container maxWidth="md">{props.children}</Container>
         </div>
     );
 }

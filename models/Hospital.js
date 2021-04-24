@@ -5,7 +5,7 @@ const HospitalSchema = new Schema({
     hospitalId: {
         type: String, required: true
     }, emailAddress: {
-        type: String, required: true
+        type: String
     }, name: {
         type: String
     }, phoneNumber: {
@@ -14,11 +14,16 @@ const HospitalSchema = new Schema({
         type: Number
     }, state: {
         type: String
-    }, country: {
+    }, county: {
         type: String
     }, dateOfEntry: {
         type: Date, default: Date.now
-    }, availableServices: [{
+    }, hospitalBedCount: {
+        type: Number
+    }, FipsStateAndCountryCode: {
+        type: Number
+    },
+    availableServices: [{
         type: String, enum: ['emergency', 'blood-bank', 'others']
     }], bloodBank: [{
         type: String

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
@@ -16,6 +16,7 @@ import ErrorTextField from '../ErrorTextField';
 import LoadingButton from '../LoadingButton';
 import LinkButton from '../LinkButton';
 import GoogleIcon from '../../icons/GoogleIcon';
+import User from '../../models/user';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -57,8 +58,28 @@ export default function SignUp() {
     const passwordRef = useRef();
     const [error, setError] = useState(new SignUpError());
     const [loadingSignUp, setLoadingSingUp] = useState(false);
-    const { signUp, signInWithGoogle } = useAuth();
+    const { currentUser, signUp, signInWithGoogle, dbUserCreate } = useAuth();
     const history = useHistory();
+
+    useEffect(async () => {
+        if (currentUser) {
+            await dbUserCreate(
+                new User(
+                    {
+                        uid: currentUser.userId,
+                        email: currentUser.emailAddress,
+                        phoneNumber: currentUser.phoneNumber,
+                        metadata: {
+                            creationTime: currentUser.dateOfEntry,
+                        },
+                    },
+                    fNameRef.current.value,
+                    lNameRef.current.value,
+                ),
+            );
+            history.push('/');
+        }
+    }, [currentUser]);
 
     async function handleSignUp(e) {
         e.preventDefault();
@@ -97,8 +118,12 @@ export default function SignUp() {
         setLoadingSingUp(true);
         try {
             setError(new SignUpError());
-            await signUp(emailRef.current.value, passwordRef.current.value);
-            history.push('/');
+            await signUp(
+                emailRef.current.value,
+                passwordRef.current.value,
+                fNameRef.current.value,
+                lNameRef.current.value,
+            );
         } catch (e) {
             console.log(e);
             const err = new SignUpError();

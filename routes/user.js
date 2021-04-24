@@ -8,8 +8,12 @@ router.get('/:uid', (req, res) => {
         res.sendStatus(401);
     }
     User.findOne({
-        userID: userId
-    }).then(res.send).catch(res.send);
+        userId: userId
+    })
+        .then(user => {
+            res.send(user);
+        })
+        .catch(err => res.status(500).send(err));
 });
 
 router.post('/:uid', (req, res) => {
@@ -17,12 +21,12 @@ router.post('/:uid', (req, res) => {
     if (!userId) {
         res.sendStatus(401);
     }
-    const user = new User(req.data);
+    const user = new User(req.body);
 
     user.save().then(() => {
         res.sendStatus(200);
     }).catch(err => {
-        res.status(400).send(err);
+        res.status(500).send(err);
     });
 });
 

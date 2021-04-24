@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6bbac16-169e-4c7e-a1d7-a9fbc2fdeef5" name="Default Changelist" comment="Remove Copyright.jsx footer from SignUp.jsx and LogIn.jsx and Add a Cancel Button.">
+      <change afterPath="$PROJECT_DIR$/src/bloodtype_black_24dp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HospitalSearchElement.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/emergency_black_24dp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/BloodTypeIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/EmergencyBorderIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/EmergencyIcon.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/firebaseUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hospitalsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apis/backendApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apis/backendApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auths/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auths/SignUpOrg.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/SignUpOrg.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigations/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigations/Navigation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/AuthContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../models/Hospital.js" beforeDir="false" afterPath="$PROJECT_DIR$/../models/Hospital.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../routes/blood.js" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/blood.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +82,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\pgarg\Desktop\DBMSProject\frontend\node_modules\prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -74,6 +95,7 @@
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src" />
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src\components\custom-routes" />
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src\components\auths" />
       <recent name="C:\Users\pgarg\Desktop\DBMSProject\frontend\src\logo" />
@@ -149,7 +171,7 @@
       <workItem from="1618985038776" duration="17071000" />
       <workItem from="1619103511868" duration="13520000" />
       <workItem from="1619174690050" duration="60000" />
-      <workItem from="1619224954966" duration="6606000" />
+      <workItem from="1619224954966" duration="34541000" />
     </task>
     <task id="LOCAL-00001" summary="Add loading state in AuthContext.js&#10; - Which avoid startup &quot;currentUser is null&quot; error">
       <created>1618250072830</created>

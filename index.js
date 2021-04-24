@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(cors());
+app.use(express.json());
 
 require(require('path').join(__dirname, 'routes', 'index'))(app);
 

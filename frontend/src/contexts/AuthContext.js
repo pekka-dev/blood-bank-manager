@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import firebase from 'firebase';
 import BackendApi from '../apis/backendApi';
+import User from '../models/user';
 
 const AuthContext = createContext();
 
@@ -19,7 +20,7 @@ export const AuthProvider = ({ children }) => {
         return auth.signInWithPopup(googleSignInProvider);
     }
 
-    function signUp(email, password) {
+    function signUp(email, password, firstName, lastName) {
         return auth.createUserWithEmailAndPassword(email, password);
     }
 
@@ -43,10 +44,18 @@ export const AuthProvider = ({ children }) => {
         });
     }
 
+    function dbUserGet(userId) {
+        BackendApi({
+            method: 'GET',
+            url: `/api/user/${userId}`,
+        }).then(({ data }) => {
+            setCurrentUser(data);
+        });
+    }
+
     useEffect(() => {
-        return auth.onAuthStateChanged((user) => {
-            console.log(user);
-            setCurrentUser(user);
+        return auth.onAuthStateChanged((authUser) => {
+            setCurrentUser(authUser ? new User(authUser) : null);
             setLoading(false);
         });
     }, []);
@@ -59,6 +68,7 @@ export const AuthProvider = ({ children }) => {
         signInWithGoogle,
         forgotPassword,
         dbUserCreate,
+        dbUserGet,
     };
     return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;
 };
