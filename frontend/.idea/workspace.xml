@@ -5,29 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6bbac16-169e-4c7e-a1d7-a9fbc2fdeef5" name="Default Changelist" comment="Remove Copyright.jsx footer from SignUp.jsx and LogIn.jsx and Add a Cancel Button.">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LinkButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auths/SignUpOrg.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/custom-routes/NavRoute.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navigations/Navigation.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/GoogleIcon.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/SyringeIcon.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/google-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../routes/root.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/backendApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../models/Doctor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../models/Hospital.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../models/Recipient.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../routes/blood.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../routes/hospital.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../routes/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ErrorTextField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ErrorTextField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoadingButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadingButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PrivateRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-routes/PrivateRoute.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auths/LogIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/LogIn.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/auths/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auths/SignUpOrg.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auths/SignUpOrg.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigations/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigations/Navigation.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contexts/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/AuthContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/LogoIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/authError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
     </list>
@@ -171,6 +174,7 @@
       <workItem from="1618985038776" duration="17071000" />
       <workItem from="1619103511868" duration="13520000" />
       <workItem from="1619174690050" duration="60000" />
+      <workItem from="1619224954966" duration="5957000" />
     </task>
     <task id="LOCAL-00001" summary="Add loading state in AuthContext.js&#10; - Which avoid startup &quot;currentUser is null&quot; error">
       <created>1618250072830</created>

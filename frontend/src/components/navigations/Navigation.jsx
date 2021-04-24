@@ -23,7 +23,7 @@ import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Container from '@material-ui/core/Container';
 
@@ -74,7 +74,6 @@ export default function Navigation(props) {
     const [drawerState, setDrawerState] = useState();
     const [anchor, setAnchor] = useState(null);
     const { signOut, currentUser } = useAuth();
-    const history = useHistory();
     const theme = useTheme();
 
     function handleProfileClick(e) {
@@ -92,7 +91,6 @@ export default function Navigation(props) {
     async function handleSignOut(e) {
         e.preventDefault();
         await signOut();
-        console.log(history.location);
     }
 
     const handleDrawerOpen = () => {

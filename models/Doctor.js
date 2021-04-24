@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-    userId: {
+const DoctorSchema = new Schema({
+    doctorId: {
         type: String, required: true
     }, emailAddress: {
         type: String, required: true
@@ -14,9 +14,9 @@ const UserSchema = new Schema({
         type: String
     }, dateOfBirth: {
         type: Date, default: new Date('December 31, 1999 23:59:59')
-    }, bloodDonationCount: {
-        type: Number
-    }, zip: {
+    }, hospitals: [{
+        type: Schema.Types.ObjectId, ref: 'Hospital'
+    }], zip: {
         type: Number
     }, state: {
         type: String
@@ -37,4 +37,4 @@ const UserSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Doctor', DoctorSchema);

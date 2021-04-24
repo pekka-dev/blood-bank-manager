@@ -11,7 +11,7 @@ import { green } from '@material-ui/core/colors';
 import Container from '@material-ui/core/Container';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { SignUpError } from '../../models';
+import { SignUpError } from '../../models/authError';
 import ErrorTextField from '../ErrorTextField';
 import LoadingButton from '../LoadingButton';
 import LinkButton from '../LinkButton';
@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     buttonProgress: {
         color: green[500],
         position: 'absolute',
+    },
+    signUpButtonGrid: {
+        padding: theme.spacing(3, 0, 2),
     },
 }));
 
@@ -97,12 +100,16 @@ export default function SignUp() {
             await signUp(emailRef.current.value, passwordRef.current.value);
             history.push('/');
         } catch (e) {
-            tempError.signUPError = true;
+            console.log(e);
+            const err = new SignUpError();
+            err.signUpError.isError = true;
+            err.signUpError.message = e.message;
+            setError(err);
         }
         setLoadingSingUp(false);
     }
 
-    async function handleGoogleSign(e) {
+    async function handleGoogleSign() {
         await signInWithGoogle();
         history.push('/');
     }
@@ -190,7 +197,11 @@ export default function SignUp() {
                             </Link>
                         </Grid>
                     </Grid>
-                    <LoadingButton title="Sign Up" loading={loadingSignUp} />
+                    <Grid container className={classes.signUpButtonGrid}>
+                        <Grid item xs={12}>
+                            <LoadingButton title="Sign Up" loading={loadingSignUp} />
+                        </Grid>
+                    </Grid>
                     <Grid container justify="flex-start" direction="column" spacing={2}>
                         <Grid item>
                             <Button

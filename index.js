@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const config = require('config');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT;
+
+app.use(cors());
 
 require(require('path').join(__dirname, 'routes', 'index'))(app);
 

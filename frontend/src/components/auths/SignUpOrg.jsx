@@ -10,7 +10,7 @@ import { green } from '@material-ui/core/colors';
 import Container from '@material-ui/core/Container';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { SignUpError } from '../../models';
+import { SignUpError } from '../../models/authError';
 import ErrorTextField from '../ErrorTextField';
 import LoadingButton from '../LoadingButton';
 import LinkButton from '../LinkButton';
